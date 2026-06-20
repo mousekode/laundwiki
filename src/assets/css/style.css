@@ -1,0 +1,197 @@
+/* src/assets/css/style.css */
+/* Premium stylesheet for CleanFlow LaundryWiki */
+
+:root {
+    --primary: #0d6efd;
+    --primary-hover: #0b5ed7;
+    --primary-light: rgba(13, 110, 253, 0.1);
+    --dark-bg: #1e1e2d;
+    --dark-sidebar: #151521;
+    --light-bg: #f5f8fa;
+    --card-shadow: 0 0.5rem 1.2rem rgba(0, 0, 0, 0.04);
+    --border-color: #eff2f5;
+    --text-dark: #181c32;
+    --text-muted: #a1a5b7;
+    --sidebar-width: 240px;
+}
+
+body {
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Page Layout */
+.page {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Sidebar Styling */
+.sidebar-column {
+    width: var(--sidebar-width);
+    background-color: var(--dark-sidebar);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+@media (max-width: 768px) {
+    .sidebar-column {
+        position: fixed;
+        left: calc(-1 * var(--sidebar-width));
+        top: 0;
+        bottom: 0;
+    }
+    .sidebar-column.show {
+        left: 0;
+    }
+}
+
+/* Main Column */
+.main-column {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-width: 0;
+    background-color: var(--light-bg);
+}
+
+/* Header Styling */
+.header-wrapper {
+    background: #ffffff;
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.25rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+    flex-grow: 1;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+/* Component Details */
+.sidebar-brand {
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 1.5rem 0.75rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.sidebar-menu-item a {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.sidebar-menu-item a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+}
+
+.sidebar-menu-item a.active {
+    background-color: var(--primary) !important;
+    color: #ffffff !important;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    padding: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* Table styling override */
+.custom-table {
+    border-radius: 0.75rem;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.custom-table thead th {
+    background-color: #f9fafb;
+    border-bottom: 1px solid var(--border-color);
+    color: #4b5563;
+    font-weight: 600;
+}
+
+.custom-table tbody tr {
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.15s ease;
+}
+
+.custom-table tbody tr:hover {
+    background-color: #f9fafb;
+}
+
+/* Card custom designs */
+.card {
+    border-radius: 0.75rem !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: var(--card-shadow) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.06) !important;
+}
+
+.form-control, .form-select {
+    border-radius: 0.5rem !important;
+    border: 1px solid #d1d5db !important;
+    padding: 0.6rem 0.9rem !important;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15) !important;
+}
+
+/* Floating order price visual */
+.price-tag-highlight {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+/* Modals */
+.modal-content {
+    border-radius: 1rem !important;
+    border: none !important;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+.modal-header {
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+.modal-footer {
+    border-top: 1px solid var(--border-color) !important;
+}
