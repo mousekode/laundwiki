@@ -19,7 +19,7 @@ Project ini dibuat untuk memenuhi tugas **Ujian Akhir Semester (UAS) Genap TA. 2
 
 ### 4. Kebutuhan Fungsional Sistem
 Sistem menyediakan fitur-fitur utama berikut untuk mendukung operasional:
-* **Autentikasi & Dashboard:** Halaman utama yang menampilkan ringkasan data performa laundry (total pelanggan, order masuk, pendapatan).
+* **Autentikasi & Dashboard:** Halaman utama yang menampilkan ringkasan data performa laundry.
 * **Manajemen Data Master (CRUD Lengkap):**
   * Mengelola data **Pelanggan** (Tambah, Lihat, Ubah, Hapus).
   * Mengelola data **Layanan** (Tambah, Lihat, Ubah, Hapus).
@@ -55,3 +55,30 @@ Implementasi Object-Oriented Programming menggunakan class-class berikut:
 * `Pelanggan` - Mengatur logika CRUD data pelanggan.
 * `Paket` - Mengatur logika CRUD data paket layanan.
 * `Transaksi` - Menangani pemrosesan order dan relasi data.
+
+---
+
+## 🚀 Cara Menjalankan Aplikasi
+
+### Persiapan Awal: Import Database
+Sebelum menjalankan aplikasi dengan metode di bawah, Anda perlu mengimpor file database terlebih dahulu:
+1. Buka browser dan masuk ke **phpMyAdmin** (`http://localhost/phpmyadmin`).
+2. Buat database baru dengan nama **`db_laundwiki`**.
+3. Pilih database tersebut, lalu masuk ke tab **Import**.
+4. Pilih file **`uas_laundry.sql`** dari folder project Anda, lalu klik **Go** / **Import**.
+
+---
+
+### Cara 1: Menggunakan PHP Built-in Server (`php -S`)
+1. Pastikan servis **MySQL** pada XAMPP Control Panel sudah aktif.
+2. Buka **Terminal** atau **Command Prompt (CMD)**.
+3. Masuk ke direktori folder project **laundwiki** Anda:
+```bash
+  cd /jalur/ke/folder/laundwiki
+```
+4. Jalankan perintah `php -S`
+```bash
+  # 8000 adalah port
+  php -S localhost:8000  
+```
+5. Buka web browser lalu pergi ke `http://localhost:8000`
